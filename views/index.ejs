@@ -34,7 +34,9 @@
       </div>
       <div class="listBox">
         <ul>
-          <li><%= todo %></li>
+          <% todo.forEach(function(item) { %>
+          <li><%= item %></li>
+          <% }); %>
         </ul>
       </div>
     </div>

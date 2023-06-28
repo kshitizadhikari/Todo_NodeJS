@@ -15,7 +15,7 @@ let options = {
 };
 let currentDate = date.toLocaleDateString("en-US", options);
 
-let todo = "";
+let todo = [];
 
 app.get("/", function (req, res) {
   res.render("index", { currentDate: currentDate, todo: todo });
@@ -23,7 +23,8 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  todo = req.body.todo;
+  let item = req.body.todo;
+  todo.push(item);
   res.render("index", { currentDate: currentDate, todo: todo });
   console.log(todo);
 });
