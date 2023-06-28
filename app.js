@@ -6,18 +6,26 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
+const date = new Date();
+
+let options = {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+};
+let currentDate = date.toLocaleDateString("en-US", options);
+
+let todo = "";
+
 app.get("/", function (req, res) {
-  const date = new Date();
-
-  let options = {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-  };
-
-  let currentDate = date.toLocaleDateString("en-US", options);
-  res.render("index", { currentDate: currentDate });
+  res.render("index", { currentDate: currentDate, todo: todo });
   console.log(currentDate);
+});
+
+app.post("/", function (req, res) {
+  todo = req.body.todo;
+  res.render("index", { currentDate: currentDate, todo: todo });
+  console.log(todo);
 });
 
 app.listen(3000, function () {
