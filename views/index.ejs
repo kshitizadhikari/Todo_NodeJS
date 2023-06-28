@@ -33,11 +33,15 @@
         </form>
       </div>
       <div class="listBox">
-        <ul>
-          <% todo.forEach(function(item) { %>
-          <li><%= item %></li>
-          <% }); %>
-        </ul>
+        <p>Your Todos</p>
+
+        <div class="todos">
+          <ul>
+            <% todo.forEach(function(item) { %>
+            <li><%= item %></li>
+            <% }); %>
+          </ul>
+        </div>
       </div>
     </div>
     <!-- FOOTER -->
