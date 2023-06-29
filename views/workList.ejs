@@ -1,53 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Todo Application</title>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <div class="header">
-      <div class="headerText">
-        <h1>Work Todo</h1>
-        <h2><%= currentDate %></h2>
-      </div>
+<%- include("Layouts/header.ejs") %>
+
+<div class="main">
+  <div class="titleBox">
+    <div class="titleText">
+      <h1><%= listTitle %></h1>
+      <h2><%= currentDate %></h2>
     </div>
-
-    <!-- MAIN -->
-    <div class="main">
-      <div class="form">
-        <form action="/work" class="todoBox" method="post">
-          <p>Enter your Todo</p>
-          <input
-            class="todoBox-input"
-            name="todo"
-            type="text"
-            autocomplete="off"
-          />
-          <br />
-          <div class="btnBox">
-            <button type="submit" class="submit-btn">ADD</button>
-          </div>
-        </form>
+  </div>
+  <div class="form">
+    <form action="/work" class="todoBox" method="post">
+      <p>Enter your Todo</p>
+      <input class="todoBox-input" name="todo" type="text" autocomplete="off" />
+      <br />
+      <div class="btnBox">
+        <button
+          type="submit"
+          class="submit-btn"
+          name="submitBtn"
+          value="workList"
+        >
+          ADD
+        </button>
       </div>
-      <div class="listBox">
-        <p>Your Todos</p>
+    </form>
+  </div>
+  <div class="listBox">
+    <p>Your Todos</p>
 
-        <div class="todos">
-          <ul>
-            <% workTodos.forEach(function(item) { %>
-            <div class="listItem">
-              <input type="checkbox" />
-              <li><%= item %></li>
-            </div>
-            <% }); %>
-          </ul>
+    <div class="todos">
+      <ul>
+        <% workTodos.forEach(function(item) { %>
+        <div class="listItem">
+          <input type="checkbox" />
+          <li><%= item %></li>
         </div>
-      </div>
+        <% }); %>
+      </ul>
     </div>
-    <!-- FOOTER -->
-    <div class="footer"></div>
-  </body>
-</html>
+  </div>
+</div>
+
+<%- include("Layouts/footer.ejs") %>

@@ -16,23 +16,31 @@ let options = {
   month: "long",
 };
 let currentDate = date.toLocaleDateString("en-US", options);
-
+let listTitle = "";
 let todo = [];
 let workTodos = [];
 
 app.get("/", function (req, res) {
-  res.render("index", { currentDate: currentDate, todo: todo });
+  listTitle = "Todo";
+  res.render("index", {
+    currentDate: currentDate,
+    listTitle: listTitle,
+    todo: todo,
+  });
 });
 
 app.post("/", function (req, res) {
   let item = req.body.todo;
   todo.push(item);
   res.redirect("/");
+  console.log(req.body.submitBtn);
 });
 
 app.get("/work", function (req, res) {
+  listTitle = "Work Todo";
   res.render("workList.ejs", {
     currentDate: currentDate,
+    listTitle: listTitle,
     workTodos: workTodos,
   });
 });
