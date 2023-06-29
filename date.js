@@ -17,9 +17,7 @@ function getDay() {
 
   let options = {
     weekday: "long",
-    day: "numeric",
-    month: "long",
   };
-  let currentDate = date.toLocaleDateString("en-US", options);
-  return currentDate;
+  let day = date.toLocaleDateString("en-US", options);
+  return day;
 }
