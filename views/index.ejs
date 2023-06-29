@@ -29,7 +29,7 @@
           />
           <br />
           <div class="btnBox">
-            <button type="submit" class="submit-btn">SUBMIT</button>
+            <button type="submit" class="submit-btn">ADD</button>
           </div>
         </form>
       </div>
@@ -39,7 +39,10 @@
         <div class="todos">
           <ul>
             <% todo.forEach(function(item) { %>
-            <li><%= item %></li>
+            <div class="listItem">
+              <input type="checkbox" />
+              <li><%= item %></li>
+            </div>
             <% }); %>
           </ul>
         </div>

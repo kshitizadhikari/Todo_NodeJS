@@ -21,7 +21,6 @@
         <form action="/work" class="todoBox" method="post">
           <p>Enter your Todo</p>
           <input
-            placeholder="Your Todo"
             class="todoBox-input"
             name="todo"
             type="text"
@@ -29,7 +28,7 @@
           />
           <br />
           <div class="btnBox">
-            <button type="submit" class="submit-btn">SUBMIT</button>
+            <button type="submit" class="submit-btn">ADD</button>
           </div>
         </form>
       </div>
@@ -40,7 +39,7 @@
           <ul>
             <% workTodos.forEach(function(item) { %>
             <div class="listItem">
-              <input type="checkbox" name="tick" id="tick" />
+              <input type="checkbox" />
               <li><%= item %></li>
             </div>
             <% }); %>

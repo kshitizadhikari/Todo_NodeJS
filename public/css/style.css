@@ -84,6 +84,10 @@ body {
     "sans-serif";
 }
 
+input:checked + li {
+  text-decoration: line-through;
+}
+
 .todoBox .submit-btn {
   position: absolute;
   border-radius: 30px;

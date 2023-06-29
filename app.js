@@ -22,7 +22,6 @@ let workTodos = [];
 
 app.get("/", function (req, res) {
   res.render("index", { currentDate: currentDate, todo: todo });
-  console.log(currentDate);
 });
 
 app.post("/", function (req, res) {
