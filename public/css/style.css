@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #e4e9fd;
+  background-image: -webkit-linear-gradient(65deg, #a683e3 50%, #e4e9fd 50%);
+  min-height: 100vh;
+}
+
 .header {
   height: 20vh;
   display: flex;
@@ -51,7 +57,7 @@
   border-bottom: 10px solid #1a044e;
 }
 
-p {
+.todoBox p {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
@@ -114,12 +120,27 @@ p {
   box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
 }
 
+.listBox p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 28px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+}
+
 .todos {
   padding: 1.5rem;
 }
 
 .todos li {
-  line-height: 2rem;
+  line-height: 1.8rem;
+  list-style: none;
+  margin-left: 10px;
 }
 
 .footer {

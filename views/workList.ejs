@@ -10,7 +10,7 @@
     <!-- HEADER -->
     <div class="header">
       <div class="headerText">
-        <h1>Todo</h1>
+        <h1>Work Todo</h1>
         <h2><%= currentDate %></h2>
       </div>
     </div>
@@ -18,7 +18,7 @@
     <!-- MAIN -->
     <div class="main">
       <div class="form">
-        <form action="/" class="todoBox" method="post">
+        <form action="/work" class="todoBox" method="post">
           <p>Enter your Todo</p>
           <input
             placeholder="Your Todo"
@@ -38,8 +38,11 @@
 
         <div class="todos">
           <ul>
-            <% todo.forEach(function(item) { %>
-            <li><%= item %></li>
+            <% workTodos.forEach(function(item) { %>
+            <div class="listItem">
+              <input type="checkbox" name="tick" id="tick" />
+              <li><%= item %></li>
+            </div>
             <% }); %>
           </ul>
         </div>
